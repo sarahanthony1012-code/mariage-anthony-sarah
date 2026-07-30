@@ -101,10 +101,8 @@ h2 { margin: 0 0 24px; font-size: clamp(44px, 6vw, 68px); }
 .info-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .info-card { padding: 40px 32px; border-top: 1px solid var(--terracotta); background: var(--paper); }
 .card-number, .line-icon { display: block; min-height: 58px; color: var(--terracotta); font: 400 50px/1 var(--serif); }
-.info-card h3, .dog-card h3 { margin: 14px 0; font-size: 30px; }
-.info-card p, .dog-card p { margin: 0; }
-.dog-card { margin-top: 24px; padding: 44px; display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; background: var(--sand); }
-.paw { font: italic 90px/1 var(--serif); color: var(--terracotta); }
+.info-card h3 { margin: 14px 0; font-size: 30px; }
+.info-card p { margin: 0; }
 
 .dress-section { background: var(--paper); text-align: center; }
 .palette { max-width: 900px; margin: 0 auto 46px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; }
@@ -163,8 +161,6 @@ footer a { color: var(--sand); font-size: 10px; letter-spacing: .14em; text-tran
   .section-heading { margin-bottom: 42px; }
   .location-card { min-height: 330px; padding: 36px 26px; }
   .carpool { align-items: flex-start; padding: 22px; }
-  .dog-card { grid-template-columns: 1fr; padding: 32px 26px; }
-  .paw { display: none; }
   .palette { grid-template-columns: repeat(2, 1fr); gap: 22px; }
   .dress-notes { padding: 26px 20px; }
   .rsvp-section { background-attachment: scroll; }
@@ -245,13 +241,13 @@ footer a { color: var(--sand); font-size: 10px; letter-spacing: .14em; text-tran
 
     <section class="section locations-section" id="lieux">
       <div class="section-heading reveal">
-        <p class="section-kicker">Deux lieux, une journée</p>
+        <p class="section-kicker">Deux lieux, deux journées</p>
         <h2>Les rendez-vous</h2>
       </div>
       <div id="locations" class="location-grid"></div>
       <aside class="carpool reveal">
         <span aria-hidden="true">↝</span>
-        <p><strong>Pensez au covoiturage.</strong> Vous êtes nombreux à vivre à proximité les uns des autres : profitez-en pour partager le trajet jusqu’à Grammont puis jusqu’au château.</p>
+        <p><strong>Pensez au covoiturage.</strong> Vous êtes nombreux à vivre à proximité les uns des autres : profitez-en pour partager les trajets vers le château et la mairie de Grammont.</p>
       </aside>
     </section>
 
@@ -282,14 +278,6 @@ footer a { color: var(--sand); font-size: 10px; letter-spacing: .14em; text-tran
           <p>Les petits-déjeuners, les draps et les serviettes seront prévus sur place.</p>
         </article>
       </div>
-      <div class="dog-card reveal">
-        <div>
-          <p class="section-kicker">Nos compagnons sont invités</p>
-          <h3>Un petit coin rien que pour eux</h3>
-          <p>Un parc à chiens sera spécialement aménagé. N’hésitez pas à apporter leurs jouets et gourmandises préférés pour contribuer à cet espace qui leur sera réservé.</p>
-        </div>
-        <span class="paw" aria-hidden="true">♡</span>
-      </div>
     </section>
 
     <section class="section rsvp-section" id="reponse">
@@ -300,7 +288,7 @@ footer a { color: var(--sand); font-size: 10px; letter-spacing: .14em; text-tran
         <ul>
           <li>Présence et accompagnant éventuel</li>
           <li>Arrivée dès la veille et souhait de couchage</li>
-          <li>Chien(s), allergies et régime alimentaire</li>
+          <li>Allergies et régime alimentaire</li>
         </ul>
         <div id="rsvp-form-slot" class="form-slot">
           <p>Le formulaire s’ouvrira dans un nouvel onglet.</p>
@@ -331,7 +319,7 @@ footer a { color: var(--sand); font-size: 10px; letter-spacing: .14em; text-tran
 window.WEDDING_CONFIG = {
   couple: "Anthony & Sarah",
   dateLabel: "10 mai 2027",
-  dateISO: "2027-05-10T14:00:00+02:00",
+  dateISO: "2027-05-10T16:00:00+02:00",
   rsvpDeadline: "10 novembre 2026",
   theme: {
     warmBrown: "#63412A",
@@ -342,18 +330,18 @@ window.WEDDING_CONFIG = {
   },
   locations: [
     {
-      label: "Mariage civil",
-      name: "Domaine de Grammont",
-      address: "2733 avenue Albert-Einstein, 34000 Montpellier",
-      time: "Arrivée au plus tard à 13 h 45 · Cérémonie à 14 h",
-      map: "https://www.google.com/maps/search/?api=1&query=2733%20avenue%20Albert-Einstein%2034000%20Montpellier"
-    },
-    {
       label: "Cérémonie laïque & festivités",
       name: "Château de Granoupiac",
       address: "34725 Saint-André-de-Sangonis",
-      time: "Arrivée à 16 h · Cérémonie laïque à 16 h 30",
+      time: "Lundi 10 mai · Arrivée au plus tard à 15 h 45 · Cérémonie laïque à 16 h",
       map: "https://www.google.com/maps/search/?api=1&query=Ch%C3%A2teau%20de%20Granoupiac%2034725%20Saint-Andr%C3%A9-de-Sangonis"
+    },
+    {
+      label: "Mariage civil",
+      name: "Mairie de Grammont",
+      address: "2733 avenue Albert-Einstein, 34000 Montpellier",
+      time: "Mardi 11 mai · Cérémonie à 15 h",
+      map: "https://www.google.com/maps/search/?api=1&query=2733%20avenue%20Albert-Einstein%2034000%20Montpellier"
     }
   ],
   schedule: [
@@ -369,10 +357,8 @@ window.WEDDING_CONFIG = {
       day: "Lundi 10 mai",
       subtitle: "Le grand jour",
       items: [
-        { time: "13 h 45", title: "Arrivée au plus tard", text: "Rendez-vous au Domaine de Grammont, à Montpellier." },
-        { time: "14 h", title: "Mariage civil", text: "Célébration à la salle des mariages du Domaine de Grammont." },
-        { time: "16 h", title: "Arrivée au château", text: "Accueil au Château de Granoupiac. Le trajet s’effectue avec les véhicules personnels." },
-        { time: "16 h 30", title: "Cérémonie laïque", text: "Retrouvons-nous pour célébrer notre engagement." },
+        { time: "15 h 45", title: "Arrivée au plus tard", text: "Accueil et rafraîchissements au Château de Granoupiac." },
+        { time: "16 h", title: "Cérémonie laïque", text: "Retrouvons-nous pour célébrer notre engagement." },
         { time: "17 h", title: "Cocktail", text: "Place aux retrouvailles et aux premiers verres levés." },
         { time: "19 h 30", title: "Dîner", text: "À table !" },
         { time: "21 h 30", title: "Soirée", text: "Que la fête commence." }
@@ -383,7 +369,8 @@ window.WEDDING_CONFIG = {
       subtitle: "Le lendemain",
       items: [
         { time: "Matin", title: "Petit-déjeuner", text: "De quoi reprendre des forces sera prévu sur place." },
-        { time: "Avant 17 h", title: "On remballe", text: "Toutes les mains seront les bienvenues pour nous aider à remettre les lieux en ordre avant le départ." }
+        { time: "Avant 14 h", title: "On remballe", text: "Toutes les mains seront les bienvenues pour nous aider à remettre les lieux en ordre avant le départ." },
+        { time: "15 h", title: "Mariage civil", text: "Rendez-vous à la mairie de Grammont, à Montpellier." }
       ]
     }
   ],
