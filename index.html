@@ -88,6 +88,8 @@ h2 { margin: 0 0 24px; font-size: clamp(44px, 6vw, 68px); }
 .location-card h3 { margin: 0 0 14px; font-size: 40px; }
 .location-card p { margin: 0 0 5px; }
 .location-time { font-weight: 500; }
+.location-detail { margin-top: 8px !important; }
+.location-parking { color: var(--terracotta); font-weight: 500; }
 .map-link { margin-top: auto; padding-top: 28px; color: var(--terracotta); font-size: 10px; font-weight: 500; letter-spacing: .13em; text-transform: uppercase; text-underline-offset: 5px; }
 .carpool { margin-top: 28px; padding: 26px 34px; display: flex; gap: 20px; align-items: center; border: 1px solid var(--sand); background: rgba(245,235,200,.34); }
 .carpool span { color: var(--terracotta); font: 38px/1 var(--serif); }
@@ -247,7 +249,7 @@ footer a { color: var(--sand); font-size: 10px; letter-spacing: .14em; text-tran
       <div id="locations" class="location-grid"></div>
       <aside class="carpool reveal">
         <span aria-hidden="true">↝</span>
-        <p><strong>Pensez au covoiturage.</strong> Vous êtes nombreux à vivre à proximité les uns des autres : profitez-en pour partager les trajets vers le château et la mairie de Grammont.</p>
+        <p><strong>Pensez au covoiturage.</strong> Vous êtes nombreux à vivre à proximité les uns des autres : profitez-en pour partager les trajets vers le château et la mairie de Montpellier.</p>
       </aside>
     </section>
 
@@ -338,10 +340,12 @@ window.WEDDING_CONFIG = {
     },
     {
       label: "Mariage civil",
-      name: "Mairie de Grammont",
-      address: "2733 avenue Albert-Einstein, 34000 Montpellier",
-      time: "Mardi 11 mai · Cérémonie à 15 h",
-      map: "https://www.google.com/maps/search/?api=1&query=2733%20avenue%20Albert-Einstein%2034000%20Montpellier"
+      name: "Mairie de Montpellier",
+      address: "1 place Georges Frêche, 34000 Montpellier",
+      time: "Mardi 11 mai · Arrivée au plus tard à 14 h 10 · Cérémonie civile à 14 h 40",
+      details: "Entrée par le haut, sur le côté · Salle des mariages Harvey Milk",
+      parking: "Parking le plus proche : parking Hôtel de Ville",
+      map: "https://www.google.com/maps/search/?api=1&query=1%20place%20Georges%20Fr%C3%AAche%2034000%20Montpellier"
     }
   ],
   schedule: [
@@ -370,7 +374,8 @@ window.WEDDING_CONFIG = {
       items: [
         { time: "Matin", title: "Petit-déjeuner", text: "De quoi reprendre des forces sera prévu sur place." },
         { time: "Avant 14 h", title: "On remballe", text: "Toutes les mains seront les bienvenues pour nous aider à remettre les lieux en ordre avant le départ." },
-        { time: "15 h", title: "Mariage civil", text: "Rendez-vous à la mairie de Grammont, à Montpellier." }
+        { time: "14 h 10", title: "Arrivée au plus tard", text: "Rendez-vous à la mairie de Montpellier, 1 place Georges Frêche. L’entrée se fait par le haut, sur le côté, salle des mariages Harvey Milk. Le parking le plus proche est le parking Hôtel de Ville." },
+        { time: "14 h 40", title: "Cérémonie civile", text: "Célébration à la salle des mariages Harvey Milk." }
       ]
     }
   ],
@@ -413,6 +418,8 @@ window.WEDDING_CONFIG = {
       <h3>${place.name}</h3>
       <p>${place.address}</p>
       <p class="location-time">${place.time}</p>
+      ${place.details ? `<p class="location-detail">${place.details}</p>` : ""}
+      ${place.parking ? `<p class="location-parking">${place.parking}</p>` : ""}
       <a class="map-link" href="${place.map}" target="_blank" rel="noopener">Ouvrir l’itinéraire ↗</a>
     </article>`).join("");
 
